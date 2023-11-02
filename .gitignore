@@ -58,4 +58,7 @@ Darwin*
 !system/
 !.gitignore
 
+# Not required by Danmeal
+old/
+
 # End of https://www.toptal.com/developers/gitignore/api/openfoam
