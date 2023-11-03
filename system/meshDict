@@ -29,10 +29,10 @@ objectRefinements
     {
         type box;
         cellSize   0.01; //[m]
-        centre    (1.45 0 0); //[m]
-        lengthX      3; //[m]
+        centre    (1.75 0 0); //[m]
+        lengthX      4; //[m]
         lengthY      2; //[m]
-        lengthZ      3; //[m]
+        lengthZ      2.5; //[m]
     }
 /*    
     ahmedBox1
@@ -150,7 +150,12 @@ renameBoundary
 		}
 		"ASCII"
 		{
-			newName ahmedbodyGroup;
+			newName carBody;
+			type wall;
+		}
+		"new_name"
+		{
+			newName tyres;
 			type wall;
 		}
 	}

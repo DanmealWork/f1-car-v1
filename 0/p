@@ -40,7 +40,12 @@ boundaryField
         type            zeroGradient;
     }
 
-    ASCII
+    carBody
+    {
+        type            zeroGradient;
+    }
+
+    tyres
     {
         type            zeroGradient;
     }

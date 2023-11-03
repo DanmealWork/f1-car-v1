@@ -40,11 +40,17 @@ boundaryField
         value           $internalField;
     }
 
-    ASCII
+    carBody
     {
         type            kqRWallFunction;
         value           $internalField;
     }
+    
+    tyres
+    {
+        type            kqRWallFunction;
+        value           $internalField;
+    }    
 
     #include "include/frontBackUpperPatches"
 }

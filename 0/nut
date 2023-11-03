@@ -59,11 +59,18 @@ boundaryField
         value           uniform 0;
     }
 
-    ASCII
+    carBody
     {
         type            nutkWallFunction;
         value           uniform 0;
     }
+    
+    tyres
+    {
+        type            nutkWallFunction;
+        value           uniform 0;
+    }  
+   
 }
 
 

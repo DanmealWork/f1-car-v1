@@ -40,7 +40,12 @@ boundaryField
         value           $internalField;
     }
 
-    ASCII
+    carBody
+    {
+        type            noSlip;
+    }
+    
+    tyres
     {
         type            noSlip;
     }

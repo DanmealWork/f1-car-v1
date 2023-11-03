@@ -4,13 +4,18 @@ cd ${0%/*} || exit 1    # Run from this directory
 # Source tutorial run functions
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 
+sed -i '/solid/s/ASCII/Wheels/g' tyres.stl
+sed -i '/solid/s/ASCII/Body/g'   carBody.stl
+
+surfaceAdd constant/triSurface/carBody.stl constant/triSurface/tyres.stl constant/triSurface/ahmedbody.stl
+
 surfaceGenerateBoundingBox constant/triSurface/ahmedbody.stl ahmedbodywithbox.stl 2.0 4 0 1.5 2 2
 
 surfaceFeatureEdges -angle 15 ahmedbodywithbox.stl ahmedbodywithbox.fms
 
 cartesianMesh
 
-checkMesh
+#checkMesh
 
 #simpleFoam 
 
