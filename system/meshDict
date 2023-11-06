@@ -114,6 +114,31 @@ renameBoundary
 			newName front;
 			type wall;
 		}
+		"Body"
+		{
+			newName Body;
+			type wall;
+		}
+		"tyreFL"
+		{
+			newName tyreFL;
+			type wall;
+		}    
+		"tyreFR"
+		{
+			newName tyreFR;
+			type wall;
+		}
+		"tyreRL"
+		{
+			newName tyreRL;
+			type wall;
+		}
+		"tyreRR"
+		{
+			newName tyreRR;
+			type wall;
+		} 
 	}
 }
 

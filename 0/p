@@ -44,7 +44,6 @@ boundaryField
     {
         type            zeroGradient;
     }
-
     tyreFL
     {
         type            zeroGradient;
