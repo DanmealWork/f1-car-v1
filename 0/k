@@ -40,7 +40,7 @@ boundaryField
         value           $internalField;
     }
 
-    Body
+    carBody
     {
         type            kqRWallFunction;
         value           $internalField;

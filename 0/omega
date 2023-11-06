@@ -39,7 +39,7 @@ boundaryField
         value           $internalField;
     }
 
-    Body
+    carBody
     {
         type            omegaWallFunction;
         value           $internalField;

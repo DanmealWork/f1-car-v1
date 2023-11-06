@@ -40,7 +40,7 @@ boundaryField
         type            zeroGradient;
     }
 
-    Body
+    carBody
     {
         type            zeroGradient;
     }
