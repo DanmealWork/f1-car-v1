@@ -36,18 +36,6 @@ objectRefinements
     }*/	   	
 }
 
-localRefinement
-{
-
-    solid
-    {
-        cellSize 0.0005;
-        //refinementThickness  0.01;//[m]
-    }
-
-}
-
-
 /*
 boundaryLayers
 {	
@@ -114,9 +102,9 @@ renameBoundary
 			newName front;
 			type wall;
 		}
-		"Body"
+		"carBody"
 		{
-			newName Body;
+			newName carBody;
 			type wall;
 		}
 		"tyreFL"
@@ -140,6 +128,35 @@ renameBoundary
 			type wall;
 		} 
 	}
+}
+
+localRefinement
+{
+    carBody
+    {
+        cellSize 0.01;
+        //refinementThickness  0.01;//[m]
+    }
+    tyreFL
+    {
+        cellSize 0.01;
+        //refinementThickness  0.01;//[m]
+    }
+    carFR
+    {
+        cellSize 0.01;
+        //refinementThickness  0.01;//[m]
+    }
+    carRL
+    {
+        cellSize 0.01;
+        //refinementThickness  0.01;//[m]
+    }
+    carRR
+    {
+        cellSize 0.01;
+        //refinementThickness  0.01;//[m]
+    }
 }
 
 
