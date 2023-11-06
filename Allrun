@@ -1,38 +1,63 @@
 #!/bin/sh
-cd ${0%/*} || exit 1    # Run from this directory
+cd ${0%/*} || exit 1
+
 
 # Source tutorial run functions
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 
-sed -i '/solid/s/ASCII/Wheels/g' tyres.stl
-sed -i '/solid/s/ASCII/Body/g'   carBody.stl
 
-surfaceAdd constant/triSurface/carBody.stl constant/triSurface/tyres.stl constant/triSurface/ahmedbody.stl
+# triSurface directory containing relevant .stl files
+triSurface=~/Desktop/F1car/constant/triSurface/
 
-surfaceGenerateBoundingBox constant/triSurface/ahmedbody.stl ahmedbodywithbox.stl 2.0 4 0 1.5 2 2
 
-surfaceFeatureEdges -angle 15 ahmedbodywithbox.stl ahmedbodywithbox.fms
+# .stl files in $triSurface
+stl_files={"tyreFL.stl" "tyreFR.stl" "tyreRL.stl" "tyreRR.stl" "carBody.stl"}
 
+
+# change to $triSurface and edit internal names for patch naming
+cd ~/Desktop/F1car/constant/triSurface/
+for file in $stl_files; do
+    filename_no_extension=$(basename "$file" .stl)
+    sed -i "/solid/s/ASCII/$filename_no_extension/g" "$file"
+done
+cd ~/Desktop/F1car/
+
+# combines every file in stl_files to make 1 .stl file
+surfaceAdd "$triSurface/carBody.stl" "$triSurface/tyreFL.stl" "$triSurface/ADD1.stl"
+surfaceAdd "$triSurface/ADD1.stl"    "$triSurface/tyreFR.stl" "$triSurface/ADD2.stl"
+surfaceAdd "$triSurface/ADD2.stl"    "$triSurface/tyreRR.stl" "$triSurface/ADD3.stl"
+surfaceAdd "$triSurface/ADD3.stl"    "$triSurface/tyreRL.stl" "$triSurface/ADDFINAL.stl"
+
+
+# makes bounding box with dimensions (-x +x -y +y -z +z)
+surfaceGenerateBoundingBox constant/triSurface/ADDFINAL.stl ADDFINALwithbox.stl 2.0 4 0 1.5 2 2
+
+
+# converts .stl file to .fms for cfMesh
+surfaceFeatureEdges -angle 15 ADDFINALwithbox.stl ADDFINALwithbox.fms
+
+
+# creates mesh
 cartesianMesh
 
-#checkMesh
 
-#simpleFoam 
+# checks mesh
+checkMesh
 
-#test
 
-#runApplication blockMesh
+# decomposes case for parallel running - CHECK decomposeParDict
+decomposePar
 
-#runApplication surfaceFeatures
 
-#runApplication decomposePar -copyZero
-#runApplication snappyHexMesh -overwrite
+# solves with x amount of cores/threads
+mpirun -np 10 --use-hwthread-cpus -bind-to-core simpleFoam -parallel
 
-#runParallel patchSummary
-#runParallel potentialFoam
-#runParallel $(getApplication)
 
-#runApplication reconstructParMesh -constant
+# reconstructs case at latest time - case must have finished to run
 #runApplication reconstructPar -latestTime
+
+
+# opens Paraview for post processing
+#paraFoam
 
 #------------------------------------------------------------------------------

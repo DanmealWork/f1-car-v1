@@ -39,17 +39,32 @@ boundaryField
         value           $internalField;
     }
 
-    carBody
+    Body
     {
         type            omegaWallFunction;
         value           $internalField;
     }
     
-    tyres
+    tyreFL
+    {
+        type            omegaWallFunction;
+        value           $internalField;
+    }    
+    tyreFR
     {
         type            omegaWallFunction;
         value           $internalField;
     }
+    tyreRL
+    {
+        type            omegaWallFunction;
+        value           $internalField;
+    }
+    tyreRR
+    {
+        type            omegaWallFunction;
+        value           $internalField;
+    } 
     
 
     #include "include/frontBackUpperPatches"

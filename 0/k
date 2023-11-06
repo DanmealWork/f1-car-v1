@@ -40,18 +40,32 @@ boundaryField
         value           $internalField;
     }
 
-    carBody
+    Body
     {
         type            kqRWallFunction;
         value           $internalField;
     }
     
-    tyres
+    tyreFL
     {
         type            kqRWallFunction;
         value           $internalField;
     }    
-
+    tyreFR
+    {
+        type            kqRWallFunction;
+        value           $internalField;
+    }
+    tyreRL
+    {
+        type            kqRWallFunction;
+        value           $internalField;
+    }
+    tyreRR
+    {
+        type            kqRWallFunction;
+        value           $internalField;
+    }
     #include "include/frontBackUpperPatches"
 }
 

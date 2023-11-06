@@ -18,14 +18,14 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 
-surfaceFile "ahmedbodywithbox.fms";
-maxCellSize 0.3;
+surfaceFile "ADDFINALwithbox.fms";
+maxCellSize 0.1;
 //boundaryCellSize 0.3;
 keepCellsIntersectingBoundary 0;
 
 objectRefinements
 {
-    mainBox
+/*    mainBox
     {
         type box;
         cellSize   0.01; //[m]
@@ -33,41 +33,7 @@ objectRefinements
         lengthX      4; //[m]
         lengthY      2; //[m]
         lengthZ      2.5; //[m]
-    }
-/*    
-    ahmedBox1
-    {
-    	type box;
-        cellSize   0.0025; //[m]
-        centre    (0.522 0.169 0); //[m]
-        lengthX      1.1; //[m]
-        lengthY      0.4; //[m]
-        lengthZ      0.4; //[m]  
-    }*/ 	
-    
-    
-/*    
-    ahmedBox2
-    {
-    	type box;
-        cellSize   0.005; //[m]
-        centre    (0.65 0.169 0); //[m]
-        lengthX      1.45; //[m]
-        lengthY      0.5; //[m]
-        lengthZ      0.5; //[m]
-    }*/     	
-    	       
-/*    
-    wakeBox
-    {
-    	type box;
-        cellSize   0.005; //[m]
-        centre    (1.175 0.025 0); //[m]
-        lengthX      0.25; //[m]
-        lengthY      0.5; //[m]
-        lengthZ      0.5; //[m]
-    }*/ 	
-    	
+    }*/	   	
 }
 
 localRefinement
@@ -82,7 +48,7 @@ localRefinement
 }
 
 
-
+/*
 boundaryLayers
 {	
 
@@ -111,7 +77,7 @@ boundaryLayers
 
 
    
-}
+}*/
 
 
 renameBoundary
@@ -146,16 +112,6 @@ renameBoundary
 		"zMax"	
 		{
 			newName front;
-			type wall;
-		}
-		"ASCII"
-		{
-			newName carBody;
-			type wall;
-		}
-		"new_name"
-		{
-			newName tyres;
 			type wall;
 		}
 	}

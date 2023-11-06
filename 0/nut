@@ -59,17 +59,32 @@ boundaryField
         value           uniform 0;
     }
 
-    carBody
+    Body
     {
         type            nutkWallFunction;
         value           uniform 0;
     }
     
-    tyres
+    tyreFL
     {
         type            nutkWallFunction;
         value           uniform 0;
-    }  
+    }    
+    tyreFR
+    {
+        type            nutkWallFunction;
+        value           uniform 0;
+    }
+    tyreRL
+    {
+        type            nutkWallFunction;
+        value           uniform 0;
+    }
+    tyreRR
+    {
+        type            nutkWallFunction;
+        value           uniform 0;
+    } 
    
 }
 

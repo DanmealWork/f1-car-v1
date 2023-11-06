@@ -40,15 +40,27 @@ boundaryField
         type            zeroGradient;
     }
 
-    carBody
+    Body
     {
         type            zeroGradient;
     }
 
-    tyres
+    tyreFL
+    {
+        type            zeroGradient;
+    }    
+    tyreFR
     {
         type            zeroGradient;
     }
+    tyreRL
+    {
+        type            zeroGradient;
+    }
+    tyreRR
+    {
+        type            zeroGradient;
+    } 
 
     #include "include/frontBackUpperPatches"
 }

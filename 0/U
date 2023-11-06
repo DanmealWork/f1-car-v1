@@ -40,16 +40,33 @@ boundaryField
         value           $internalField;
     }
 
-    carBody
+    Body
     {
         type            noSlip;
     }
     
-    tyres
+    tyreFL
+    {
+        type            noSlip;	
+    }
+    tyreFR
+    {
+        type            noSlip;	
+    }    
+    tyreRL
+    {
+        type            noSlip;	
+    }    
+    tyreRR
     {
         type            noSlip;
-    }
-
+    }    
+       
+        //type            rotatingWallVelocity;
+        //origin		(0.65 0.15 0.4)
+        //axis		(0 0 1)
+        //omega   
+    
     #include "include/frontBackUpperPatches"
 }
 
