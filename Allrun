@@ -17,10 +17,8 @@ stl_files="tyreFL.stl tyreFR.stl tyreRL.stl tyreRR.stl carBody.stl"
 # change to $triSurface and edit internal names for patch naming
 cd ~/Desktop/F1car/constant/triSurface/
 for file in $stl_files; do
-    echo $file
     filename_no_extension=$(basename "$file" .stl)
     sed -i "/solid/s/ASCII/$filename_no_extension/g" "$file"
-    echo "Processed $file"
 done
 cd ~/Desktop/F1car/
 
@@ -49,15 +47,15 @@ checkMesh
 
 
 # decomposes case for parallel running - CHECK decomposeParDict
-#decomposePar
+decomposePar
 
 
 # solves with x amount of cores/threads
-#mpirun -np 10 --use-hwthread-cpus -bind-to-core simpleFoam -parallel
+mpirun -np 10 --use-hwthread-cpus -bind-to-core simpleFoam -parallel
 
 
 # reconstructs case at latest time - case must have finished to run
-#runApplication reconstructPar -latestTime
+reconstructPar -latestTime
 
 
 # opens Paraview for post processing
