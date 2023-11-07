@@ -48,18 +48,18 @@ boundaryField
     {
         type            zeroGradient;
     }    
-    tyreFR
+/*    tyreFR
     {
         type            zeroGradient;
-    }
+    }*/
     tyreRL
     {
         type            zeroGradient;
     }
-    tyreRR
+/*    tyreRR
     {
         type            zeroGradient;
-    } 
+    }*/
 
     #include "include/frontBackUpperPatches"
 }

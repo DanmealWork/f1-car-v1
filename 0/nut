@@ -31,8 +31,7 @@ boundaryField
     
     back
     {
-        type            calculated;
-        value           uniform 0;
+        type            symmetryPlane;
     }
 
     inlet
@@ -63,28 +62,27 @@ boundaryField
     {
         type            nutkWallFunction;
         value           uniform 0;
-    }
-    
+    }    
     tyreFL
     {
         type            nutkWallFunction;
         value           uniform 0;
     }    
-    tyreFR
+/*    tyreFR
     {
         type            nutkWallFunction;
         value           uniform 0;
-    }
+    }*/
     tyreRL
     {
         type            nutkWallFunction;
         value           uniform 0;
     }
-    tyreRR
+/*    tyreRR
     {
         type            nutkWallFunction;
         value           uniform 0;
-    } 
+    }*/ 
    
 }
 

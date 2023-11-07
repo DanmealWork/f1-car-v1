@@ -50,21 +50,21 @@ boundaryField
         type            omegaWallFunction;
         value           $internalField;
     }    
-    tyreFR
+/*    tyreFR
     {
         type            omegaWallFunction;
         value           $internalField;
-    }
+    }*/
     tyreRL
     {
         type            omegaWallFunction;
         value           $internalField;
     }
-    tyreRR
+/*    tyreRR
     {
         type            omegaWallFunction;
         value           $internalField;
-    } 
+    }*/
     
 
     #include "include/frontBackUpperPatches"

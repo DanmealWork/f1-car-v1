@@ -44,28 +44,28 @@ boundaryField
     {
         type            kqRWallFunction;
         value           $internalField;
-    }
-    
+    }    
     tyreFL
     {
         type            kqRWallFunction;
         value           $internalField;
     }    
-    tyreFR
+/*    tyreFR
     {
         type            kqRWallFunction;
         value           $internalField;
-    }
+    }*/
     tyreRL
     {
         type            kqRWallFunction;
         value           $internalField;
     }
-    tyreRR
+/*    tyreRR
     {
         type            kqRWallFunction;
         value           $internalField;
-    }
+    }*/
+    
     #include "include/frontBackUpperPatches"
 }
 

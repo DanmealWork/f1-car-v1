@@ -51,13 +51,13 @@ boundaryField
         axis		(0 0 1);
         omega		200;
     }
-    tyreFR
+/*    tyreFR
     {
         type            rotatingWallVelocity;
         origin	        (0.65 0.145 -0.4);
         axis		(0 0 1);
         omega	        200;
-    }    
+    }*/   
     tyreRL
     {
         type            rotatingWallVelocity;
@@ -65,13 +65,13 @@ boundaryField
         axis		(0 0 1);
         omega		150;
     }    
-    tyreRR
+/*    tyreRR
     {
         type            rotatingWallVelocity;
         origin	        (2.6 0.195 -0.4);
         axis		(0 0 1);
         omega	        150;
-    }    
+    }*/    
 	      
     #include "include/frontBackUpperPatches"
 }
