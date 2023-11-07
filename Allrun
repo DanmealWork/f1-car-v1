@@ -25,13 +25,13 @@ cd ~/Desktop/F1car/
 
 # combines every file in stl_files to make 1 .stl file
 surfaceAdd "$triSurface/carBody.stl" "$triSurface/tyreFL.stl" "$triSurface/ADD1.stl"
-surfaceAdd "$triSurface/ADD1.stl"    "$triSurface/tyreFR.stl" "$triSurface/ADD2.stl"
-surfaceAdd "$triSurface/ADD2.stl"    "$triSurface/tyreRR.stl" "$triSurface/ADD3.stl"
-surfaceAdd "$triSurface/ADD3.stl"    "$triSurface/tyreRL.stl" "$triSurface/ADDFINAL.stl"
+surfaceAdd "$triSurface/ADD1.stl"    "$triSurface/tyreRL.stl" "$triSurface/ADDFINAL.stl"
+#surfaceAdd "$triSurface/ADD2.stl"    "$triSurface/tyreRR.stl" "$triSurface/ADD3.stl"
+#surfaceAdd "$triSurface/ADD3.stl"    "$triSurface/tyreRL.stl" "$triSurface/ADDFINAL.stl"
 
 
 # makes bounding box with dimensions (-x +x -y +y -z +z)
-surfaceGenerateBoundingBox constant/triSurface/ADDFINAL.stl ADDFINALwithbox.stl 2.0 4 0 1.5 2 2
+surfaceGenerateBoundingBox constant/triSurface/ADDFINAL.stl ADDFINALwithbox.stl 2.0 4 0 1.5 0 2
 
 
 # converts .stl file to .fms for cfMesh
