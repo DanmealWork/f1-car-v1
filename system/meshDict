@@ -95,7 +95,7 @@ renameBoundary
 	  	"zMin"
 		{
 			newName back;
-			type wall;
+			type symmetryPlane;
 		}
 		"zMax"	
 		{
@@ -112,21 +112,21 @@ renameBoundary
 			newName tyreFL;
 			type wall;
 		}    
-		"tyreFR"
+/*		"tyreFR"
 		{
 			newName tyreFR;
 			type wall;
-		}
+		}*/
 		"tyreRL"
 		{
 			newName tyreRL;
 			type wall;
 		}
-		"tyreRR"
+/*		"tyreRR"
 		{
 			newName tyreRR;
 			type wall;
-		} 
+		}*/ 
 	}
 }
 
@@ -139,22 +139,22 @@ localRefinement
     }
     tyreFL
     {
-        cellSize 0.01;
+        cellSize 0.005;
         //refinementThickness  0.01;//[m]
     }
-    carFR
+    tyreFR
     {
-        cellSize 0.01;
+        cellSize 0.005;
         //refinementThickness  0.01;//[m]
     }
-    carRL
+    tyreRL
     {
-        cellSize 0.01;
+        cellSize 0.005;
         //refinementThickness  0.01;//[m]
     }
-    carRR
+    tyreRR
     {
-        cellSize 0.01;
+        cellSize 0.005;
         //refinementThickness  0.01;//[m]
     }
 }
